@@ -1,0 +1,35 @@
+{
+    "title": "POKEMON TCG POCKET",
+    "search_placeholder": "Search cards...",
+    "clear_search": "Clear search",
+    "search_button": "Search",
+    "all_cards": "All Cards",
+    "my_collection": "My Collection",
+    "language": "Language",
+    "loading": "Loading cards...",
+    "error_title": "Error",
+    "error_loading_cards": "Failed to load Pokemon cards: {{error}}",
+    "no_cards_available": "No cards available.",
+    "your_collection": "Your Collection",
+    "total_cards_in_collection": "Total Cards in Collection (including duplicates): {{count}}",
+    "total_cards": "Total Cards",
+    "collected_cards": "Collected Cards",
+    "missing_cards": "Missing Cards",
+    "in_collection": "In Collection: {{count}}",
+    "pack": "Pack",
+    "collection_description": "View and manage your collected cards.",
+    "type": "Type",
+    "hp": "HP",
+    "rarity": "Rarity",
+    "rarities": {
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "ex": "EX",
+    "immersive": "Immersive",
+    "gold": "Gold",
+    "crown": "Crown",
+    "promo": "Promo"
+  }
+  }
+  

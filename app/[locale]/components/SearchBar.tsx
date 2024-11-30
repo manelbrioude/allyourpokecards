@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useCards } from "@/context/CardsContext";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/app/[locale]/components/ui/input";
+import { Button } from "@/app/[locale]/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const useDebounce = (value: string, delay: number): string => {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -22,6 +23,7 @@ const useDebounce = (value: string, delay: number): string => {
 };
 
 export default function SearchBar() {
+  const { t } = useTranslation("common"); // Access the `common` namespace
   const { setSearchTerm } = useCards();
   const [localSearchTerm, setLocalSearchTerm] = useState("");
 
@@ -50,7 +52,7 @@ export default function SearchBar() {
         <div className="relative flex-grow w-full sm:w-2/3 md:w-1/2 lg:w-1/3 min-w-[300px]">
           <Input
             type="text"
-            placeholder="Search cards by name..."
+            placeholder={t("search_placeholder")} // Use translation for placeholder
             value={localSearchTerm}
             onChange={handleInputChange}
             className="w-full pr-10"
@@ -60,7 +62,7 @@ export default function SearchBar() {
               type="button"
               onClick={clearSearch}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
-              aria-label="Clear search"
+              aria-label={t("clear_search")} // Use translation for ARIA label
             >
               ❌
             </button>
@@ -68,7 +70,7 @@ export default function SearchBar() {
         </div>
         {/* Search Button */}
         <Button type="submit" className="w-auto">
-          Search
+          {t("search_button")} {/* Use translation for button text */}
         </Button>
       </div>
     </form>

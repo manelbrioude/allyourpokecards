@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/skeleton"; // Adjust path if necessary
+import { Skeleton } from "@/app/[locale]/components/ui/skeleton"; // Adjust path if necessary
 
 export default function CardGridSkeleton() {
   return (

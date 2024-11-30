@@ -4,24 +4,30 @@ import { useCards } from "@/context/CardsContext"; // Fetch all cards
 import { useCollection } from "@/context/CollectionContext"; // Manage the collection
 import Image from "next/image";
 import { useState } from "react"; // State for search input
+import { useTranslation } from "react-i18next";
 
 export default function Collection() {
+  const { t } = useTranslation("common"); // Use the "common" namespace
   const { cards, loading, error } = useCards(); // Get cards data
   const { addCard, removeCard, collection } = useCollection(); // Manage user's collection
   const [searchTerm, setSearchTerm] = useState(""); // State for live filtering
 
   if (loading) {
-    return <p className="text-center">Loading cards...</p>;
+    return <p className="text-center">{t("loading")}</p>;
   }
 
   if (error) {
     return (
-      <p className="text-center text-red-500">Failed to load cards: {error}</p>
+      <p className="text-center text-red-500">
+        {t("error_loading_cards", { error })}
+      </p>
     );
   }
 
   if (!cards || cards.length === 0) {
-    return <p className="text-center text-gray-500">No cards available.</p>;
+    return (
+      <p className="text-center text-gray-500">{t("no_cards_available")}</p>
+    );
   }
 
   // Filter cards based on search term
@@ -57,12 +63,12 @@ export default function Collection() {
     <main className="container mx-auto px-4 py-8">
       {/* Page Title */}
       <h1 className="text-6xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 text-center mb-4">
-        Your Collection
+        {t("your_collection")}
       </h1>
 
       {/* Total Cards Count */}
       <p className="text-center text-lg font-semibold mb-8">
-        Total Cards in Collection (including duplicates): {totalCardsCount}
+        {t("total_cards_in_collection", { count: totalCardsCount })}
       </p>
 
       {/* Pack Stats */}
@@ -73,9 +79,15 @@ export default function Collection() {
             className="border p-4 rounded-md shadow-md flex flex-col items-center text-center bg-gray-100"
           >
             <h2 className="text-xl font-bold">{pack}</h2>
-            <p className="text-gray-700">Total Cards: {totalCards}</p>
-            <p className="text-gray-700">Collected Cards: {collectedCards}</p>
-            <p className="text-gray-700">Missing Cards: {missingCards}</p>
+            <p className="text-gray-700">
+              {t("total_cards")}: {totalCards}
+            </p>
+            <p className="text-gray-700">
+              {t("collected_cards")}: {collectedCards}
+            </p>
+            <p className="text-gray-700">
+              {t("missing_cards")}: {missingCards}
+            </p>
           </div>
         ))}
       </div>
@@ -84,7 +96,7 @@ export default function Collection() {
       <div className="mb-8">
         <input
           type="text"
-          placeholder="Search cards..."
+          placeholder={t("search_placeholder")}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -119,11 +131,13 @@ export default function Collection() {
 
               {/* Collection Count */}
               <p className="text-sm text-gray-600 mt-2">
-                In Collection: {inCollection}
+                {t("in_collection", { count: inCollection })}
               </p>
 
               {/* Pack Name */}
-              <p className="text-sm text-gray-500 mt-1">Pack: {card.pack}</p>
+              <p className="text-sm text-gray-500 mt-1">
+                {t("pack")}: {card.pack}
+              </p>
 
               {/* Add and Remove Buttons */}
               <div className="flex space-x-2 mt-4">

@@ -1,0 +1,36 @@
+{
+    "title": "POKEMON TCG POCKET",
+    "search_placeholder": "Buscar cartas...",
+    "clear_search": "Limpiar búsqueda",
+    "search_button": "Buscar",
+    "all_cards": "Todas las Cartas",
+    "my_collection": "Mi Colección",
+    "language": "Idioma",
+    "loading": "Cargando cartas...",
+    "error_title": "Error",
+    "error_loading_cards": "No se pudieron cargar las cartas de Pokémon: {{error}}",
+    "no_cards_available": "No hay cartas disponibles.",
+    "your_collection": "Tu Colección",
+    "total_cards_in_collection": "Total de Cartas en la Colección (incluyendo duplicados): {{count}}",
+    "total_cards": "Cartas Totales",
+    "collected_cards": "Cartas Coleccionadas",
+    "missing_cards": "Cartas Faltantes",
+    "in_collection": "En la Colección: {{count}}",
+    "pack": "Paquete",
+    "collection_description": "Visualiza y administra tus cartas coleccionadas.",
+    "type": "Tipo",
+    "hp": "Puntos de Salud",
+    "rarity": "Rareza",
+    "rarities": {
+    "common": "Común",
+    "uncommon": "Poco común",
+    "rare": "Rara",
+    "ex": "EX",
+    "immersive": "Inmersivo",
+    "gold": "Oro",
+    "crown": "Corona",
+    "promo": "Promoción"
+  }
+
+  }
+  
