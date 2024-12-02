@@ -2,7 +2,7 @@
 
 import React, { ReactNode, useEffect, useState } from "react";
 import { I18nextProvider } from "react-i18next";
-import { createInstance, Resource } from "i18next";
+import { createInstance, Resource, i18n } from "i18next";
 import initTranslations from "@/app/i18n";
 
 interface TranslationsProviderProps {
@@ -18,7 +18,7 @@ export default function TranslationsProvider({
   namespaces,
   resources,
 }: TranslationsProviderProps) {
-  const [i18nInstance, setI18nInstance] = useState<any>(null);
+  const [i18nInstance, setI18nInstance] = useState<i18n | null>(null);
 
   useEffect(() => {
     const initializeI18n = async () => {

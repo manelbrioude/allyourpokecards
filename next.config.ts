@@ -7,10 +7,12 @@ const nextConfig = {
         hostname: 'raw.githubusercontent.com',
         pathname: '/chase-manning/pokemon-tcg-pocket-cards/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        pathname: '/w40/**',
+      },
     ],
-  },
-  experimental: {
-    appDir: true, // Enable the App Router if required
   },
 };
 

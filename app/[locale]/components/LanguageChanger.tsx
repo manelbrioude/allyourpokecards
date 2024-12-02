@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function LanguageChanger() {
   const router = useRouter();
@@ -24,20 +25,24 @@ export default function LanguageChanger() {
         onClick={() => changeLanguage("en")}
         className="focus:outline-none"
       >
-        <img
+        <Image
           src="https://flagcdn.com/w40/gb.png"
           alt="English"
-          className="w-8 h-8 rounded-full border border-gray-300 hover:border-purple-500 transition-all"
+          width={40}
+          height={40}
+          className="rounded-full border border-gray-300 hover:border-purple-500 transition-all"
         />
       </button>
       <button
         onClick={() => changeLanguage("es")}
         className="focus:outline-none"
       >
-        <img
+        <Image
           src="https://flagcdn.com/w40/es.png"
           alt="Spanish"
-          className="w-8 h-8 rounded-full border border-gray-300 hover:border-purple-500 transition-all"
+          width={40}
+          height={40}
+          className="rounded-full border border-gray-300 hover:border-purple-500 transition-all"
         />
       </button>
     </div>
