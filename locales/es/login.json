@@ -1,0 +1,8 @@
+{
+    "title": "Iniciar sesión",
+    "username_label": "Nombre de usuario",
+    "password_label": "Contraseña",
+    "login_button": "Iniciar sesión",
+    "error_invalid_credentials": "Usuario o contraseña inválidos."
+  }
+  

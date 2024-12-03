@@ -16,7 +16,7 @@ export default async function Home({
   const { locale } = params;
 
   // Fetch resources for the current locale and namespaces
-  const { resources } = await initTranslations(locale, ["common"]);
+  const { resources } = await initTranslations(locale, ["common", "login"]);
 
   return (
     <TranslationsProvider
